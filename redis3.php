@@ -24,5 +24,8 @@ echo $redis->hget('identity01','name');
 echo $redis->hget('identity01', 'address');
 echo $redis->hget('identity01', 'husband');  */
 
-//to see all
-$redis->hmget('identity01');
+//to see specific value
+print_r($redis->hmget('identity01', ['name', 'husband']));
+
+//to see all value
+print_r($redis->hgetall('identity01'));
